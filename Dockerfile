@@ -26,7 +26,7 @@ RUN \
 # All apt-gets, we have to install some first to get apt-add-repository command
 RUN \
     apt-get update && apt-get upgrade -y && \
-    apt-get install -y syslinux-common python-software-properties software-properties-common && \
+    apt-get install -y syslinux-common python-software-properties software-properties-common python-git && \
     add-apt-repository -y ppa:saltstack/salt && \
     apt-get update && \
     apt-get install -y --force-yes salt-minion && \

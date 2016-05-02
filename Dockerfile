@@ -1,4 +1,4 @@
-FROM ubuntu-upstart:14.04
+FROM ubuntu:16.04
 MAINTAINER Martin Hlavac <info@mhlavac.net>
 
 # locales fix
@@ -26,10 +26,7 @@ RUN \
 # All apt-gets, we have to install some first to get apt-add-repository command
 RUN \
     apt-get update && apt-get upgrade -y && \
-    apt-get install -y syslinux-common python-software-properties software-properties-common python-git && \
-    add-apt-repository -y ppa:saltstack/salt && \
-    apt-get update && \
-    apt-get install -y --force-yes salt-minion && \
+    apt-get install -y syslinux-common python-software-properties software-properties-common python-git salt-minion && \
     mkdir -p /srv
 
 # Clear some caches

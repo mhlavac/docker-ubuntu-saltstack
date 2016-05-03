@@ -25,8 +25,7 @@ RUN \
 
 # UTC timezone
 RUN \
-    echo "UTC" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata && \
-    cp /etc/timezone /tz/ && cp /etc/localtime /tz/
+    echo "UTC" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
 # All apt-gets, we have to install some first to get apt-add-repository command
 RUN \

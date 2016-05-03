@@ -23,6 +23,11 @@ RUN \
     echo "nl_NL.UTF-8 UTF-8" >> /etc/locale.gen && \
     locale-gen
 
+# UTC timezone
+RUN \
+    echo "UTC" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata && \
+    cp /etc/timezone /tz/ && cp /etc/localtime /tz/
+
 # All apt-gets, we have to install some first to get apt-add-repository command
 RUN \
     apt-get update && apt-get upgrade -y && \

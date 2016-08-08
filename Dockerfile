@@ -30,7 +30,7 @@ RUN \
 # All apt-gets, we have to install some first to get apt-add-repository command
 RUN \
     apt-get update && apt-get upgrade -y && \
-    apt-get install -y syslinux-common python-software-properties software-properties-common python-git salt-minion && \
+    apt-get install -y syslinux-common python-software-properties software-properties-common python-git salt-common && \
     mkdir -p /srv
 
 # Clear some caches

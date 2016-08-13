@@ -15,7 +15,7 @@ RUN \
     LANG=en_US.UTF-8 && \
     LANGUAGE=en_US.UTF-8 && \
     LC_ALL=en_US.UTF-8 && \
-    echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+    echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 # UTC timezone

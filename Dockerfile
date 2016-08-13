@@ -15,12 +15,7 @@ RUN \
     LANG=en_US.UTF-8 && \
     LANGUAGE=en_US.UTF-8 && \
     LC_ALL=en_US.UTF-8 && \
-    echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-    echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen && \
-    echo "es_ES.UTF-8 UTF-8" >> /etc/locale.gen && \
-    echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
-    echo "it_IT.UTF-8 UTF-8" >> /etc/locale.gen && \
-    echo "nl_NL.UTF-8 UTF-8" >> /etc/locale.gen && \
+    echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
     locale-gen
 
 # UTC timezone
@@ -30,7 +25,7 @@ RUN \
 # All apt-gets, we have to install some first to get apt-add-repository command
 RUN \
     apt-get update && apt-get upgrade -y && \
-    apt-get install -y syslinux-common python-software-properties software-properties-common python-git salt-common && \
+    apt-get install -y syslinux-common python-software-properties software-properties-common python-git salt-minion && \
     mkdir -p /srv
 
 # Clear some caches
